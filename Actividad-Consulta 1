@@ -1,0 +1,143 @@
+<!--
+
+1) ESTRUCTURAS DE CONTROL EN CSS MEDIANTE Sass: Sass nos permite emplear estructuras de control en CSS
+gracias a las directivas de que proporciona pudiendo realizar variaciones en el estilo basándonos en una condición.
+Básicamente, podemos realizar condiciones if y bucles en CSS.
+
+ejemplos:
+
+-------------CONDICIONALES-----------
+  .contenedor{
+      width:50px;
+      height:50px;
+  } 
+  $colorear : true !default; 
+  .contenedor{
+    @if $colorear{
+      background-color: #0080C3;
+    }
+    @else{
+      background-color: transparent;
+    }
+  }
+-------------CONDICIONALES-----------
+
+-------------CICLOS------------------
+- @for
+Con esta directiva realizamos bucles y ajustamos los estilos basándonos en el valor del contador.
+Podemos crear un bucle for de 2 formas:
+ 1.Mediante through:  ($contador from valor_inicio through valor_final)
+ 2.Empleando to: ($contador from valor_inicio to valor_final)
+La diferencia que hay entre ambos métodos es que con through se incluye el valor_final
+mientras que con to no tiene en cuenta el último valor.
+con through:
+
+@for $hijo from 1 through 3 {
+     
+     .contenedor p:nth-child( #{$hijo} )
+     {
+          font-size: 2em;
+     }
+}
+con to:
+
+@for $tamano from 1 to 3 {
+  .cabecera-#{$tamano} { font-size: 2em * $tamano; }
+}
+con each:
+
+$redes: twitter facebook google;
+@each $red in $redes {
+  .#{$red} {
+    background-image: url(/imagenes/iconos/#{$red}.png);
+    width:25px;
+    height:25px;
+  }
+}
+el resultado del anterior each seria:
+
+.twitter {
+  background-image: url(/imagenes/iconos/twitter.png);
+  width: 25px;
+  height: 25px;
+}
+
+.facebook {
+  background-image: url(/imagenes/iconos/facebook.png);
+  width: 25px;
+  height: 25px;
+}
+
+.google {
+  background-image: url(/imagenes/iconos/google.png);
+  width: 25px;
+  height: 25px;
+  
+  con while:
+  
+$elementos: 3; 
+@while $elementos > 0 {
+  
+  .caja-#{$elementos} {
+    width: 100% / $elementos;
+  }
+  $elementos: $elementos - 1;
+}
+
+-------------CICLOS------------------
+
+2) CICLO DE VIDA DE UN COMPONENTE EN ANGULAR
+Lifecycle Method:En Angular, cada componente tiene un ciclo de vida, una cantidad de etapas diferentes que atraviesa.
+Hay 8 etapas diferentes en el ciclo de vida de los componentes. Cada etapa se denomina lifecycle hook event o en
+‘evento de enlace de ciclo de vida’. Podemos utilizar estos eventos en diferentes fases de nuestra aplicación para
+obtener el control de los componentes. Como un componente es una clase de TypeScript, cada componente debe tener un
+método constructor.
+El constructor de la clase de componente se ejecuta primero, antes de la ejecución de cualquier otro lifecycle hook.
+Si necesitamos inyectar dependencias en el componente, el constructor es el mejor lugar para hacerlo.
+Después de ejecutar el constructor, Angular ejecuta sus métodos de enganche de ciclo de vida en un orden específico.
+la ejecucion va en este orden:
+Revisemos cada uno de los eventos:
+1. ngOnChanges: Este evento se ejecuta cada vez que se cambia un valor de un input control dentro de un componente.
+Se activa primero cuando se cambia el valor de una propiedad vinculada.
+Siempre recibe un change data map o mapa de datos de cambio, que contiene el valor actual y anterior de la propiedad
+vinculada envuelta en un SimpleChange.
+2. ngOnInit: Se ejecuta una vez que Angular ha desplegado los data-bound properties(variables vinculadas a datos) o cuando
+el componente ha sido inicializado, una vez que ngOnChanges se haya ejecutado.
+Este evento es utilizado principalmente para inicializar la data en el componente.
+3. ngDoCheck: Se activa cada vez que se verifican las propiedades de entrada de un componente.
+Este método nos permite implementar nuestra propia lógica o algoritmo de detección de cambios personalizado para cualquier componente.
+4. ngAfterContentInit: Se ejecuta cuando Angular realiza cualquier muestra de contenido dentro de las vistas
+de componentes y justo después de ngDoCheck. Actuando una vez que todas las vinculaciones del componente deban
+verificarse por primera vez. Está vinculado con las inicializaciones del componente hijo.
+5. ngAfterContentChecked: Se ejecuta cada vez que el contenido del componente ha sido verificado por el mecanismo
+de detección de cambios de Angular; se llama después del método ngAfterContentInit. Este también se invoca en cada
+ejecución posterior de ngDoCheck y está relacionado principalmente con las inicializaciones del componente hijo.
+6. ngAfterViewInit: Se ejecuta cuando la vista del componente se ha inicializado por completo. Este método se inicializa
+después de que Angular ha inicializado la vista del componente y las vistas secundarias. Se llama después de ngAfterContentChecked.
+Solo se aplica a los componentes.
+7.ngAfterViewChecked: Se ejecuta después del método ngAfterViewInit y cada vez que la vista del componente verifique cambios.
+También se ejecuta cuando se ha modificado cualquier enlace de las directivas secundarias.
+Por lo tanto, es muy útil cuando el componente espera algún valor que proviene de sus componentes secundarios.
+8.ngOnDestroy: Este método se ejecutará justo antes de que Angular destruya los componentes. Es muy útil para darse
+de baja de los observables y desconectar los event handlers para evitar memory leaks o fugas de memoria.
+
+3) LISTADO DE COMANDOS NG CLI RxJs
+
+-instalacion de node js: node -v
+-instalacion de angular cli: 
+$ npm i -g @angular/cli@latest
+$ ng version
+$ ng help
+$ ng new --help
+-ejecutar servidor:
+ng new normal
+cd normal
+npm start
+
+bibliografía: 
+1. https://academia-binaria.com/hola-angular-cli/
+2. https://medium.com/angular-chile/angular-componentes-y-sus-ciclos-de-vida-aa639e13a688
+3. https://www.guidacode.com/2018/css/sass/estructuras-de-control-en-css-mediante-sass/
+
+-->
+
