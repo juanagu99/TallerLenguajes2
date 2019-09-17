@@ -1,0 +1,114 @@
+<-
+
+lINKS DE LOS CERTIFICADOS: 
+
+-GIT: https://www.udemy.com/certificate/UC-WXBJUD37/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email
+-VELOCIDAD: https://www.udemy.com/certificate/UC-3IKLCDQT/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email
+
+-Qué es un observable en RXJS:
+
+El patrón Observer juega un papel fundamental y explica a la perfección, el concepto de reactivo.
+El patrón Observer define un productor de información, nuestro stream y que en RxJs está representado por una secuencia Observable
+o simplemente Observable y un consumidor de la misma, que sería el Observer. Como hemos visto, en RxJs el Observable es nuestro stream
+y que nos sirve para prácticamente todo: eventos del ratón, rangos de números, promesas, etc.
+
+const myObservable$ = Rx.Observable.from([1,2,3]);
+-Observer
+const myObserver = {  
+  next: x => console.log(`Observer next value: ${x}`),
+  error: err => console.error(`Observer error value: ${x}`),
+  complete: () => console.log(`Observer complete notification`),
+};
+
+myObservable$.subscribe(myObserver);
+
+Como vemos el Observer es un objeto que dispone de 3 métodos para recibir información acerca del Observable.
+Cada uno de estos métodos cumple una función y a través de cada uno de ellos recibiremos distintos tipos de notificaciones del Observable.
+
+El Observer en sí mismo no devolverá ningún valor hasta que se active la comunicación entre ambas partes.
+Este mecanismo es la subscripción y nada se ejecutará hasta que establezcamos una subscripción.
+El método subscribe activa el Observable y habilita al Observer a recibir notificaciones del stream.
+No obstante, es posible establecer una subscripción pasando directamente funciones como argumentos,
+ya que internamente RxJs asignará cada uno de estos callbacks a los respectivos métodos del Observer,
+siguiendo el orden en el que son pasados, siendo el primero de ellos next, el segundo error y el tercero complete.
+
+const arrayStream$ = Rx.Observable.from([1,2,3]);
+
+arrayStream$  
+  .subscribe(
+     next => console.log(next),
+     err => console.log(err),
+     () => console.log('completed!')
+);
+
+El resultado en ambos casos es el mismo, no hay ninguna diferencia, pero esta forma suele ser algo más habitual
+ya que además no es necesario establecerlos todos.
+
+ECMAScript:
+
+ECMAScript es una especificación de lenguaje de programación publicada por ECMA International. El desarrollo empezó en 1996
+y estuvo basado en el popular lenguaje JavaScript propuesto como estándar por Netscape Communications Corporation.
+Actualmente está aceptado como el estándar ISO 16262.
+
+ECMAScript define un lenguaje de tipos dinámicos ligeramente inspirado en Java y otros lenguajes del estilo de C.
+Soporta algunas características de la programación orientada a objetos mediante objetos basados en prototipos y pseudoclases.
+
+La mayoría de navegadores de Internet incluyen una implementación del estándar ECMAScript, al igual que un acceso al Document Object
+Model para manipular páginas web. JavaScript está implementado en la mayoría de navegadores, Internet Explorer de Microsoft usa JScript.
+El navegador Opera tenía su propio intérprete de ECMAScript con extensiones para soportar algunas características de JavaScript
+y JScript, actualmente Opera esta basado en Chromium (y utiliza su intérprete). Cada navegador tiene extensiones propias al estándar
+ECMAScript, pero cualquier código que se adecúe al estándar debería funcionar en todos ellos.
+
+
+Promesas:
+
+Una Promise (promesa en castellano) es un objeto que representa la terminación o el fracaso eventual de una
+operación asíncrona. Dado que la mayoría de las personas consumen promises ya creadas, esta guía explicará primero cómo consumirlas,
+y luego  cómo crearlas.
+
+Esencialmente, una promesa es un objeto devuelto al cuál se adjuntan funciones callback, en lugar de pasar callbacks a una función.
+
+Considera la función crearArchivoAudioAsync(), el cuál genera de manera asíncrona un archivo de sonido de acuerdo a un archivo
+de configuración, y dos funciones callback, una que es llamada si el archivo de audio es creado satisfactoriamente, y la otra que
+es llamada si ocurre un error. El código podría verse de la siguiente forma:
+
+function exitoCallback(resultado) {
+  console.log("Archivo de audio disponible en la URL " + resultado);
+}
+
+function falloCallback(error) {
+  console.log("Error generando archivo de audio " + error);
+}
+
+crearArchivoAudioAsync(audioConfig, exitoCallback, falloCallback);
+... las funciones modernas devuelven un objeto promise al que puedes adjuntar funciones de retorno (callbacks).
+Si crearArchivoAudioAsync fuera escrita de manera tal que devuelva un objeto promise, usarla sería tan simple como esto:
+
+crearArchivoAudioAsync(audioConfig).then(exitoCallback, falloCallback);
+Lo cuál es la versión corta de:
+
+const promesa = crearArchivoAudioAsync(audioConfig);
+promise.then(exitoCallback, falloCallback);
+Llamamos a esto una llamada a función asíncrona. Esta convención tiene varias ventajas. Exploraremos cada una de ellas.
+
+Estilos de codificacion:
+
+1)Nombres de variable apropiadas
+Una pieza clave para un buen estilo es la elección apropiada de nombres de variable.
+Variables pobremente nombradas dificultan la lectura del código fuente y su comprensión.
+2) Estilo de indentación
+Estilo de indentación, en lenguajes de programación que usan llaves para indentar o delimitar bloques lógicos de código,
+como por ejemplo C, es también un punto clave el buen estilo. Usando un estilo lógico y consistente hace el código de uno 
+más legible.
+3) Valores booleanos en estructuras de decisión
+Algunos programadores piensan que las estructuras de decisión como las anteriores, donde el resultado de la decisión es
+meramente una computación de un valor booleano, son demasiado prolijos e incluso propensos al error.
+4) En los lenguajes de programación de la familia C se recomienda también evitar el uso de caracteres tabulador en medio de una línea,
+ya que diferentes editores de textos muestran su anchura de forma diferente.
+5) El lenguaje de programación Python usa indentación para indicar estructuras de control, por tanto se requiere obligatoriamente
+una buena indentación. Haciendo esto, la necesidad de marcar con llaves ({ y }) es eliminada, y la legibilidad es mejorada
+sin interferir con los estilos de codificación comunes. Con todo, esto lleva frecuentemente a problemas donde el código es
+copiado y pegado dentro de un programa Python, requiriendo un tedioso reformateado. Adicionalmente, el código Python
+se vuelve inusable cuando es publicado en un foro o página web que elimine el espacio en blanco.
+
+-!>
