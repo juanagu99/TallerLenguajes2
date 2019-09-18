@@ -15,7 +15,7 @@ se utilizan para crear un servicio y su manejo para evitar que esto lo haga un c
 
 ------consulta----------------------
 
-PUNTO 1)
+PUNTO 1 y 2)
 
 -Un observable en RXJS:
 
@@ -50,7 +50,7 @@ myObservable$.subscribe(myObserver);
 
 nota: en un observable se puede obtener multiples respuestas, cada vez que se obtengan resultados
 
-PUNTO 2)
+PUNTO 3)
 
 ECMAScript:
 
@@ -64,7 +64,7 @@ datos relevantes:
 -ECMAScript basado en el popular lenguaje JavaScript propuesto como estándar por Netscape Communications Corporation.
 -Actualmente está aceptado como el estándar ISO 16262.
 
-PUNTO 3)
+PUNTO 4)
 
 Una promesa basicamente es una funcion asincrona que se puede aplicar cuando se realiza un proceso
 que posiblemente se asicnrono por ejemple l consumo de un webservice
@@ -93,6 +93,8 @@ resultado => { console.log(resultado); }
 );
 
 nota: como se puede observar las promesas devuelven un unico resultado
+
+PUNTO 5)
 
 Estilos de codificación:
 
