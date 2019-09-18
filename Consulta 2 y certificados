@@ -5,93 +5,96 @@ lINKS DE LOS CERTIFICADOS:
 -GIT: https://www.udemy.com/certificate/UC-WXBJUD37/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email
 -VELOCIDAD: https://www.udemy.com/certificate/UC-3IKLCDQT/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email
 
--Qué es un observable en RXJS:
+-------consultas adicionales-------
 
-El patrón Observer juega un papel fundamental y explica a la perfección, el concepto de reactivo.
-El patrón Observer define un productor de información, nuestro stream y que en RxJs está representado por una secuencia Observable
-o simplemente Observable y un consumidor de la misma, que sería el Observer. Como hemos visto, en RxJs el Observable es nuestro stream
-y que nos sirve para prácticamente todo: eventos del ratón, rangos de números, promesas, etc.
+1) programacion reactiva: basicamente se basa en el cotrol del flujo de los datos (stream) 
+principalmente basada en funciones asincronas ( no se sabe en que momento se va obtener una respuesta ejm consumo de api)
+este control se aplica con observables y las promesas.
+2) clase injectable: los injectables dentro de app se encentran en el vector de providers,
+se utilizan para crear un servicio y su manejo para evitar que esto lo haga un componente
+
+------consulta----------------------
+
+PUNTO 1)
+
+-Un observable en RXJS:
+
+Basicamente un observable un objeto representado por la instancia de cualquier evento o estrucutura de datos, alli se pueden analizar arrays,
+eventos de un formulario (submit) etc.
+
+ejemplo 
 
 const myObservable$ = Rx.Observable.from([1,2,3]);
--Observer
+
+-Un observer en RXJS:
+El observer es el seguimiento que va tener el observable quiere decir que es el analizador del flujo de datos en todo momento,
+por ejemplo la actividad reciente de las personas que sigues en instagram
+
+ejemplo
+
 const myObserver = {  
   next: x => console.log(`Observer next value: ${x}`),
   error: err => console.error(`Observer error value: ${x}`),
   complete: () => console.log(`Observer complete notification`),
 };
 
+-Un observer en RXJS:
+ejemplo de la implementacion de un observable
+
+-Subject en RXJS:
+Es el encargado de aplicar los eventos(observer) a un observable
+
+ejemplo
+
 myObservable$.subscribe(myObserver);
 
-Como vemos el Observer es un objeto que dispone de 3 métodos para recibir información acerca del Observable.
-Cada uno de estos métodos cumple una función y a través de cada uno de ellos recibiremos distintos tipos de notificaciones del Observable.
+nota: en un observable se puede obtener multiples respuestas, cada vez que se obtengan resultados
 
-El Observer en sí mismo no devolverá ningún valor hasta que se active la comunicación entre ambas partes.
-Este mecanismo es la subscripción y nada se ejecutará hasta que establezcamos una subscripción.
-El método subscribe activa el Observable y habilita al Observer a recibir notificaciones del stream.
-No obstante, es posible establecer una subscripción pasando directamente funciones como argumentos,
-ya que internamente RxJs asignará cada uno de estos callbacks a los respectivos métodos del Observer,
-siguiendo el orden en el que son pasados, siendo el primero de ellos next, el segundo error y el tercero complete.
-
-const arrayStream$ = Rx.Observable.from([1,2,3]);
-
-arrayStream$  
-  .subscribe(
-     next => console.log(next),
-     err => console.log(err),
-     () => console.log('completed!')
-);
-
-El resultado en ambos casos es el mismo, no hay ninguna diferencia, pero esta forma suele ser algo más habitual
-ya que además no es necesario establecerlos todos.
+PUNTO 2)
 
 ECMAScript:
 
-ECMAScript es una especificación de lenguaje de programación publicada por ECMA International. El desarrollo empezó en 1996
-y estuvo basado en el popular lenguaje JavaScript propuesto como estándar por Netscape Communications Corporation.
-Actualmente está aceptado como el estándar ISO 16262.
+-Se puede decir que ECMAScript es un estandar que rige los estandares de los lenguajes como JavaScript,JScript,etc ..
+haciendo una analogia ECMAScript es el lenguaje y JavaScript es un dialecto.
 
-ECMAScript define un lenguaje de tipos dinámicos ligeramente inspirado en Java y otros lenguajes del estilo de C.
-Soporta algunas características de la programación orientada a objetos mediante objetos basados en prototipos y pseudoclases.
+-Ultima version:7
 
-La mayoría de navegadores de Internet incluyen una implementación del estándar ECMAScript, al igual que un acceso al Document Object
-Model para manipular páginas web. JavaScript está implementado en la mayoría de navegadores, Internet Explorer de Microsoft usa JScript.
-El navegador Opera tenía su propio intérprete de ECMAScript con extensiones para soportar algunas características de JavaScript
-y JScript, actualmente Opera esta basado en Chromium (y utiliza su intérprete). Cada navegador tiene extensiones propias al estándar
-ECMAScript, pero cualquier código que se adecúe al estándar debería funcionar en todos ellos.
+datos relevantes:
 
+-ECMAScript basado en el popular lenguaje JavaScript propuesto como estándar por Netscape Communications Corporation.
+-Actualmente está aceptado como el estándar ISO 16262.
 
-Promesas:
+PUNTO 3)
 
-Una Promise (promesa en castellano) es un objeto que representa la terminación o el fracaso eventual de una
-operación asíncrona. Dado que la mayoría de las personas consumen promises ya creadas, esta guía explicará primero cómo consumirlas,
-y luego  cómo crearlas.
+Una promesa basicamente es una funcion asincrona que se puede aplicar cuando se realiza un proceso
+que posiblemente se asicnrono por ejemple l consumo de un webservice
 
-Esencialmente, una promesa es un objeto devuelto al cuál se adjuntan funciones callback, en lugar de pasar callbacks a una función.
+ejemplo de como crear una funcion que devuelva un objeto promesa:
 
-Considera la función crearArchivoAudioAsync(), el cuál genera de manera asíncrona un archivo de sonido de acuerdo a un archivo
-de configuración, y dos funciones callback, una que es llamada si el archivo de audio es creado satisfactoriamente, y la otra que
-es llamada si ocurre un error. El código podría verse de la siguiente forma:
-
-function exitoCallback(resultado) {
-  console.log("Archivo de audio disponible en la URL " + resultado);
+1) funcion(){
+  return new Promise (
+    (resultado) => {resultado("1");}
+    );
 }
 
-function falloCallback(error) {
-  console.log("Error generando archivo de audio " + error);
+2) funcion(){
+  return new Promise (
+  setTimeout(
+    () => {resultado("1"); }, 3000 ),
+  setTimeout(
+    () => {resultado("123"); }, 1000 ); //este seria el primer resultado ya que es la resultado que va demorar menos
 }
 
-crearArchivoAudioAsync(audioConfig, exitoCallback, falloCallback);
-... las funciones modernas devuelven un objeto promise al que puedes adjuntar funciones de retorno (callbacks).
-Si crearArchivoAudioAsync fuera escrita de manera tal que devuelva un objeto promise, usarla sería tan simple como esto:
+ejemplo de como utilizar la funcion que devuelva un objeto promesa:
 
-crearArchivoAudioAsync(audioConfig).then(exitoCallback, falloCallback);
-Lo cuál es la versión corta de:
+var x;
+x.funcion.then(
+resultado => { console.log(resultado); }
+);
 
-const promesa = crearArchivoAudioAsync(audioConfig);
-promise.then(exitoCallback, falloCallback);
-Llamamos a esto una llamada a función asíncrona. Esta convención tiene varias ventajas. Exploraremos cada una de ellas.
+nota: como se puede observar las promesas devuelven un unico resultado
 
-Estilos de codificacion:
+Estilos de codificación:
 
 1)Nombres de variable apropiadas
 Una pieza clave para un buen estilo es la elección apropiada de nombres de variable.
@@ -110,5 +113,12 @@ una buena indentación. Haciendo esto, la necesidad de marcar con llaves ({ y })
 sin interferir con los estilos de codificación comunes. Con todo, esto lleva frecuentemente a problemas donde el código es
 copiado y pegado dentro de un programa Python, requiriendo un tedioso reformateado. Adicionalmente, el código Python
 se vuelve inusable cuando es publicado en un foro o página web que elimine el espacio en blanco.
+
+cibergrafía: 
+
+-https://devcode.la/blog/que-es-y-por-que-aprender-ecmascript/
+-https://www.youtube.com/watch?v=UEB08bJIMGw
+-https://www.arquitecturajava.com/promise-vs-observable-en-javascript/
+-https://medium.com/angular-chile/inyecci%C3%B3n-de-componentes-y-directivas-en-angular-6ae75f64be66
 
 -!>
