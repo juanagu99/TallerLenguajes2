@@ -46,16 +46,27 @@ d.       Python               |- Potente en IA             -Problemas en la segu
                               |- Flexible en cuanto        - La ejecucion de un programa en python no es tan rapida como por ejemplo uno en c
                               |a la programacion
                               |- Abundancia de bibliotecas
+                              |                              
+e.       Scala                |- Fuerte en Big Data        -no es muy compatible para las versiones viejas de scala ni de java
                               |
+                              |- Adaptable con java        -No es ta buena su documentacion
+                              |
+                              |-Open source
+                              |
+f.       Ruby                 |-Opensource                 -No tiene soporte unicode
+                              |
+                              |-Menos lineas de codigo     -Interpretacion de cada navegador es diferente
+                              |
+                              |-Extensa comunidad          -Etiquetas limitadas
+                              |                              
+g.       Rust                 |-Tan eficiente como c       -No cuenta con recolector de basura
+                              |
+                              |-modular                    
+                              |
+                              |-Permite trabajar 
+                              | directamente con
+                              | el procesador
                               
-e.       Scala                |
-                              |
-                              |
-                              |
-                              |
-                              |
-f.       Ruby                 |
-g.       Rust                 |
 
 PUNTO 2)
 
