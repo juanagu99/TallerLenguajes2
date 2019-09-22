@@ -1,5 +1,63 @@
 <!--
 
+PUNTO 1)
+
+a.       NodeJS: Es un entorno para el backend en especial para la creacion de servidores
+
+b.       .Net core: Es un framework pensado para ejecutar aplicaciones en cualquier ambiente, sea en la nube o en servidores locales. además es
+         es importante resaltar que con este framework se pueden desarrollar aplicaciones multiplataformas
+        
+c.       Spring Boot (Java): spring boot es una mejora de spring framework, muy conocida ya que ayuda a acelerar el proceso de desarrollo
+         de una aplicacion, esta tecnologia es excelente para migrar una app a una arquitectua de microservicios 
+
+d.       Python: Es un lenguaje de programación de codigo abierto, muy conocido ya que es muy potente en los trabajos de inteligencia artifical
+
+e.       Scala: Es un lenguaje de programacion que es muy compatible con java, esto lo hace aun mas potente.
+         ademas es muy conocido por su fuerte en los trabajos de Big Data
+
+f.        Ruby: Es un lenguaje de programacion, dicen que es un lenguaje muy amigable para los programadores.
+          utilizado para cdiferente tipos de aplicaciones, orientada a objetos. 
+
+g.       Rust: es un lenguaje de programacion muy fuerte en el lado del cliente y el servidor
+
+                                    VENTAJAS                  DESVENTAJAS
+a.       NodeJS               |- Asincrono                 - Callbacks
+                              |
+                              |- Mmodular                  - La arquitectura no es tan potente como la de java
+                              |
+                              |- Opensource
+                              |
+                              |
+b.       .Net core            |- Multiplataforma           - El costo de migrar de frameworks anteriores a .net core es muy alto
+                              |
+                              |-Fuerte en microservicios   - Hay librerias del framework anterior que no se pueden utilizar
+                              |
+                              |-Performance
+                              |                                                         
+c.       Spring Boot (Java)   |-Desarrollo orientado a     - Maniene en constante actualizacion y ocasiona problemas en migracion
+                              | componentes
+                              |- Potente en microservicios - Poca documentación
+                              |
+                              |- No se requieren xml para  - Sus componentes front son muy limitados
+                              |su configuracion
+                              |
+d.       Python               |- Potente en IA             -Problemas en la seguridad
+                              |
+                              |- Flexible en cuanto        - La ejecucion de un programa en python no es tan rapida como por ejemplo uno en c
+                              |a la programacion
+                              |- Abundancia de bibliotecas
+                              |
+                              
+e.       Scala                |
+                              |
+                              |
+                              |
+                              |
+                              |
+f.       Ruby                 |
+g.       Rust                 |
+
+PUNTO 2)
 
 
 -->
