@@ -71,4 +71,21 @@ g.       Rust                 |-Tan eficiente como c       -No cuenta con recole
 PUNTO 2)
 
 
--->
+--> .net core ya que se puede trabajar en diferentes lenguajes c#,c++,f#..etc
+es un entorno perfecto para crear microservicios,es multiplataforma y ademas es un producto de microsoft.
+
+PUNTO 3
+
+-->  Programación funcional: esta basada en en funciones, es un paradigma de programacion en donde se tiene una entrada(parametro) 
+para realizar un proceso y retornar una respuesta(salida)
+
+-->  Programación orientada a objetos: Es un paradigma de programación en donde los objetos son una instancia de la vida real, se utilizan para estructurar los datos y darles un sentido.
+-->  Programación orientada a eventos: Es un paradigma de programación que dependede los eventos que sucedan en la ejecucion de un programa por ejemplo un KEYUP
+-->  Programación reactiva: Es un paradigma de programación basado en el manejo de flujo de datos de una manera asincrona
+-->  Programación orientada a servicios (soa) : Es un marco de trabajo la cual consiste en organizar los diferentes servicios de un sistema, modularizarlos y mejorar su interaccion
+--> Microservicios: Es una arquitectura basada en modularizar los servicios y que estos a su vez sean autonomos, estos son pequeños y son independientes no como en soa
+
+
+
+
+
