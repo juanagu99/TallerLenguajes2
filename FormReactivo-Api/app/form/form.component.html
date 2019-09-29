@@ -1,0 +1,31 @@
+<form [formGroup]="FormRef" (ngSubmit)="Submit()" >
+    <div class="modal-header">
+        <h4 class="modal-title"></h4>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.close('Close click')" >
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="Documento">Documento de identificación</label>
+        <input id="Documento" placeholder="Documento" class="form-control" formControlName="Documento" appMaskDocument />
+        <span style="color:Red;" *ngIf="FormRef.controls['Documento'].touched && FormRef.controls['Documento'].errors?.required" >El documento es requerido*</span>
+      </div>
+      <div class="form-group">
+        <label for="Valor">Valor</label>
+        <input id="Valor" placeholder="Valor" class="form-control" formControlName="Valor" appMaskValue /> <!--formControlName es el objeto que se carga en el builder enel componente-->
+        <span style="color:Red;" *ngIf="FormRef.controls['Valor'].touched && FormRef.controls['Valor'].errors?.required" >Valor es requerido*</span>
+      </div>
+      <div class="form-group">
+        <label for="CorreoElectronico">Correo electronico</label>
+        <input type="email" id="CorreoElectronico" placeholder="Correo@correo.com" class="form-control" formControlName="CorreoElectronico" appMaskEmail />
+        <span style="color:Red;" *ngIf="FormRef.controls['CorreoElectronico'].touched && FormRef.controls['CorreoElectronico'].errors?.required" >Correo electronico es requerido*</span>
+      </div>
+    </div>  
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')"  >Close</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!FormRef.valid">Save</button>
+    </div>           
+</form>
+
+
